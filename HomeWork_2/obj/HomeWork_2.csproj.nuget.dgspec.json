@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shah-\\source\\repos\\HomeWork_2\\HomeWork_2\\HomeWork_2.csproj": {}
+    "D:\\2021-2022\\RPM LR\\HomeWork_2\\HomeWork_2\\HomeWork_2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shah-\\source\\repos\\HomeWork_2\\HomeWork_2\\HomeWork_2.csproj": {
+    "D:\\2021-2022\\RPM LR\\HomeWork_2\\HomeWork_2\\HomeWork_2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shah-\\source\\repos\\HomeWork_2\\HomeWork_2\\HomeWork_2.csproj",
+        "projectUniqueName": "D:\\2021-2022\\RPM LR\\HomeWork_2\\HomeWork_2\\HomeWork_2.csproj",
         "projectName": "HomeWork_2",
-        "projectPath": "C:\\Users\\shah-\\source\\repos\\HomeWork_2\\HomeWork_2\\HomeWork_2.csproj",
+        "projectPath": "D:\\2021-2022\\RPM LR\\HomeWork_2\\HomeWork_2\\HomeWork_2.csproj",
         "packagesPath": "C:\\Users\\shah-\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shah-\\source\\repos\\HomeWork_2\\HomeWork_2\\obj\\",
+        "outputPath": "D:\\2021-2022\\RPM LR\\HomeWork_2\\HomeWork_2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\shah-\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -7,34 +7,34 @@ namespace HomeWork_2
     {
         static void Main(string[] args)
         {
-            PersonnelOfficer personnelOfficer = new PersonnelOfficer("Светлана", "Татаринова", "Борисовна");
-            Student stud1 = personnelOfficer.MakeStudent("Артур", "Шодиев", "Хушвахтович");
-            Student stud2 = personnelOfficer.MakeStudent("Иван", "Чесновков", "Александравич");
-            Student stud3 = personnelOfficer.MakeStudent("Дана", "Шишова", "Ивановна");
-            Teacher teacher = personnelOfficer.MakeTeacher("Илья", "Климов", "Витальевич");
+            PersonnelOfficer SB = new PersonnelOfficer("Светлана", "Татаринова", "Борисовна");
+            Student stud1 = SB.MakeStudent("Артур", "Шодиев", "Хушвахтович");
+            Student stud2 = SB.MakeStudent("Иван", "Чесновков", "Александравич");
+            Student stud3 = SB.MakeStudent("Дана", "Шишова", "Ивановна");
+            Teacher Ilya = SB.MakeTeacher("Илья", "Климов", "Витальевич", Rank.OldTeacher);
 
-            Group group = personnelOfficer.MakeGroup();
-            group.SetTeacher(teacher);
-            teacher.Lecture = 23;
-            teacher.Lectured();
+            Group group = SB.MakeGroup();
+            group.SetTeacher(Ilya);
+            Ilya.Lecture = 23;
+            Ilya.Lectured();
             group.NameGroup = "3-1П9";
             group.AddStudent(stud1);
             group.AddStudent(stud2);
             group.AddStudent(stud3);
 
-            Console.WriteLine(personnelOfficer.GetAllFIO());
-            Console.WriteLine(teacher.GetAllFIO());
+            Console.WriteLine(SB.GetAllFIO());
+            Console.WriteLine(Ilya.GetAllFIO());
             Console.WriteLine(stud3.GetAllFIO());
 
             Console.WriteLine(stud3.GetGroup());
-            Console.WriteLine(personnelOfficer.Post);
-            Console.WriteLine(teacher.Post);
+            Console.WriteLine(SB.Post);
+            Console.WriteLine(Ilya.Post);
             Console.WriteLine(group.GetNumber());
             stud2.Deducted();
             Console.WriteLine(group.GetNumber());
-            Console.WriteLine(teacher.Lecture);
-            teacher.Lectured();
-            Console.WriteLine(teacher.Lecture);
+            Console.WriteLine(Ilya.Lecture);
+            Ilya.Lectured();
+            Console.WriteLine(Ilya.Lecture);
         }
     }
     public class Group
@@ -141,9 +141,9 @@ namespace HomeWork_2
         {
             return (new Student(name, middlename, surname));
         }
-        public Teacher MakeTeacher(string name, string middlename, string surname)
+        public Teacher MakeTeacher(string name, string middlename, string surname, Rank position)
         {
-            return (new Teacher(name, middlename, surname));
+            return (new Teacher(name, middlename, surname, position));
         }
         public Group MakeGroup()
         {
@@ -151,10 +151,17 @@ namespace HomeWork_2
         }
     }
 
+    public enum Rank 
+    { 
+        Asistent,
+        OldTeacher
+    }
+
+
     public class Teacher : Worker
     {
-        public Teacher(string name, string middlename, string surname)
-            : base(name, middlename, surname, "Препод") { }
+        static string[] status = { "Ассистент", "Старший преподаватель" };
+        public Teacher(string name, string middlename, string surname, Rank position) : base(name, middlename, surname, status[(int)position]) { }
         private int lecture;
         private Group group = null;
         public int Lecture
